@@ -1,0 +1,39 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   3 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "total"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "solenoid_valve_curtain_v1_109:97:395-400"\
+    }\
+    ChartData {\
+      Name         "prev_cw"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "solenoid_valve_curtain_v1_109:97:401-408"\
+    }\
+    ChartData {\
+      Name         "prev_ccw"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "solenoid_valve_curtain_v1_109:97:409-417"\
+    }\
+  }
+  %return ChartDataElements
+%endfunction
